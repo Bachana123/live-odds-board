@@ -17,30 +17,30 @@ function App() {
   const { highlight, updateHighlight } = useHighlight()
 
   useEffect(() => {
-    // const unsubscribe = startMockWebSocket((items) => {
-    //   items.forEach(({ index, odds }) => {
-    //     const item = existingMatches[index]
-    //     if (item) {
-    //       const highlighted: HighlightRecord = {}
-    //       Object.keys(odds).forEach((key) => {
-    //         const currentOdds = item.odds[key as keyof Odds]
-    //         if (currentOdds) {
-    //           const newOdds = odds[key as keyof Odds]
-    //           if (newOdds > currentOdds) {
-    //             highlighted[key as keyof Odds] = 'increase'
-    //           } else if (newOdds < currentOdds) {
-    //             highlighted[key as keyof Odds] = 'decrease'
-    //           }
-    //         }
-    //       })
-    //       updateHighlight(item.id, highlighted)
-    //       updateMatch(item.id, { odds })
-    //     }
-    //   })
-    // })
+    const unsubscribe = startMockWebSocket((items) => {
+      items.forEach(({ index, odds }) => {
+        const item = existingMatches[index]
+        if (item) {
+          const highlighted: HighlightRecord = {}
+          Object.keys(odds).forEach((key) => {
+            const currentOdds = item.odds[key as keyof Odds]
+            if (currentOdds) {
+              const newOdds = odds[key as keyof Odds]
+              if (newOdds > currentOdds) {
+                highlighted[key as keyof Odds] = 'increase'
+              } else if (newOdds < currentOdds) {
+                highlighted[key as keyof Odds] = 'decrease'
+              }
+            }
+          })
+          updateHighlight(item.id, highlighted)
+          updateMatch(item.id, { odds })
+        }
+      })
+    })
 
     return () => {
-      // unsubscribe()
+      unsubscribe()
     }
   }, [existingMatches, updateHighlight, updateMatch])
 
