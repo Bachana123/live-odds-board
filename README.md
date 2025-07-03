@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# Live Odds Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a high-performance live odds board web application built with **React 19**, **TypeScript** and **Vite**. It displays **10,000+** live matches in a virtualized table that updates odds in real time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+✅ Display 10,000+ live matches
+✅ Virtual scrolling with react-window
+✅ Select and highlight odds
+✅ Persist selected odds and scroll position
+✅ Real-time updates with mock WebSocket
+✅ Visual change indicators (green/red highlights)
 
-## Expanding the ESLint configuration
+## Tech Stack and Challenges
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Tech Stack
+- **Frontend:** React 19 (with TypeScript)
+- **State Management:** Zustand
+- **State Management:** Zustand
+- **Styling:** CSS Modules / plain CSS
+- **UUID:** For generating unique match IDs
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Challenges Faced
+- **Virtual Scrolling Performance:** Efficiently rendering thousands of rows without lag.
+- **Real-time Updates:** Simulating live odds changes via a mock WebSocket
+- **State Persistence** Remembering selected odds and scroll position across reloads
+- **Highlighting Changes** Visually indicating increased or decreased odds
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js** (>=18.x recommended)
+- **Yarn** or **npm**
+
+### Installation
+
+```sh
+# Clone the repository
+git clone https://github.com/Bachana123/live-odds-board.git
+cd live-odds-board
+
+# Install dependencies
+npm install # or yarn
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Start the Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm run dev # or yarn dev 
 ```
+
+## Deployment
+
+```sh
+npm run build  # or yarn build
+npm run preview  # or yarn preview
+```
+
+---
+Feel free to contribute or report issues via [GitHub Issues](https://github.com/Bachana123/Scholarship-Winners/issues). 🚀
