@@ -18,7 +18,6 @@ export default function OddsTable({ highlight }: OddsTableProps) {
       itemCount={matches.length}
       itemSize={60}
       width={'580px'}
-      minWidth={800}
       initialScrollOffset={scrollOffset}
       onScroll={(props: { scrollOffset: number }) => setScrollOffset(props.scrollOffset)}
     >
