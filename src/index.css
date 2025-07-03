@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  background: url('bricks.png') center center;
+  background: url('/images/bricks.png') center center;
 }
 
 .wrapper {
