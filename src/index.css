@@ -1,0 +1,87 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: url('bricks.png') center center;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  margin: 20px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header {
+  margin-right: 20px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  width: min-content;
+}
+.cell {
+  color: white;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-bottom: 1px solid #4b4b4b;
+  box-sizing: border-box;
+
+  &:nth-child(1) {
+    font-weight: bold;
+    width: 50px;
+  }
+  &:nth-child(2) {
+    font-weight: bold;
+    width: 180px;
+  }
+  &:nth-child(3) {
+    font-weight: bold;
+    width: 100px;
+  }
+  &:nth-child(4) {
+    font-weight: bold;
+    width: 80px;
+  }
+  &:nth-child(n+5) {
+    font-weight: bold;
+    width: 50px;
+  }
+  &:nth-child(odd) {
+    background-color: #2f2f2f;
+  }
+  &:nth-child(even) {
+    background-color: #393939;
+  }
+}
+
+.header .cell {
+  padding: 10px;
+}
+
+.cell.odd {
+  cursor: pointer;
+}
+.cell.odd.selected {
+  background: #ffd700;
+  color: #83aa66;
+}
+.cell.odd.increase {
+  background: #aaffaa;
+}
+.cell.odd.decrease {
+  background: #ffaaaa;
+}
