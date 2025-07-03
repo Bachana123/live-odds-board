@@ -5,12 +5,12 @@
 This project is a high-performance live odds board web application built with **React 19**, **TypeScript** and **Vite**. It displays **10,000+** live matches in a virtualized table that updates odds in real time.
 
 ## Features
-✅ Display 10,000+ live matches
-✅ Virtual scrolling with react-window
-✅ Select and highlight odds
-✅ Persist selected odds and scroll position
-✅ Real-time updates with mock WebSocket
-✅ Visual change indicators (green/red highlights)
+- ✅ Display 10,000+ live matches
+- ✅ Virtual scrolling with react-window
+- ✅ Select and highlight odds
+- ✅ Persist selected odds and scroll position
+- ✅ Real-time updates with mock WebSocket
+- ✅ Visual change indicators (green/red highlights)
 
 ## Tech Stack and Challenges
 
